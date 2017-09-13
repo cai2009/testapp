@@ -9,42 +9,34 @@ package testapp;
  *
  * @author caihe
  */
-public class CreatArray {
+public class CreatArray 
+{
     private int[] arr;
     private int l;         //array length
     
-    public CreatArray(int s){
+    public CreatArray(int s)
+    {
         arr = new int[s];
-        l = 0;
+        l = 0;             
     }
     
-    public void insert(int s){
+    public void insert(int s)
+    {
         arr[l] = s;
         l++;
     }
     
-    public void delete(int i){     //i是下标
-        int temp;
-        int j = 0;
-        if(i<l && i>=0){
-            for(j=0;j<l;j++){
-                while(arr[j] == arr[i]){
-                    temp = arr[i];
-                    j = j+1;
-                    arr[i] = arr[j];
-                   
-                    l--;
-                    System.out.println("delete"+temp);
-                }
-//                System.out.println("delete"+temp);
-            }
-        }
+    public void delete()
+    {     
+        System.out.println("delete:" + arr[l]);
+        l--;
     }
          
         
     
     
-    public void display(){
+    public void display()
+    {
         for(int i=0;i<l;i++){
             System.out.println(arr[i]);
         }

@@ -19,14 +19,13 @@ public class Testapp {
    
         
        CreatArray arr = new CreatArray(10);
-       for(int i=0;i<=9;i++){
+       for(int i=0;i<=8;i++){
            arr.insert(i);
        }
        arr.display();
-       arr.delete(2);
+       arr.delete();
        System.out.println("sss");
-       arr.display();
-       arr.delete(2);
+//       arr.delete();
        arr.display();
         
     }

@@ -28,9 +28,10 @@ public class CreatArray
     
     public void delete()
     {     
-        System.out.println("delete:" + arr[l]);
+        System.out.println("delete:" + arr[l-1]);
         l--;
     }
+    
          
         
     
@@ -38,7 +39,24 @@ public class CreatArray
     public void display()
     {
         for(int i=0;i<l;i++){
-            System.out.println(arr[i]);
+            System.out.print(arr[i]);
         }
     }
+    
+//    public static void main(String args[])
+//    {
+//        CreatArray arr = new CreatArray(10);
+//        arr.insert(1);
+//        arr.insert(3);
+//        arr.insert(10);
+//        arr.insert(111);
+//        arr.insert(12);
+//        arr.insert(15);
+//        arr.display();
+//        arr.delete();
+//        arr.display();
+//    }
+    
 }
+
+

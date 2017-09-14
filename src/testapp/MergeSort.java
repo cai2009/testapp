@@ -8,6 +8,7 @@ package testapp;
 /**
  *
  * @author caihe
+ * 将数组分成2半，排完序再合并
  */
 public class MergeSort {
     public static void remergesort(int[] arr,int first,int last,int[] leftarr,int[] rightarr)

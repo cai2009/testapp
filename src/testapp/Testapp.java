@@ -16,6 +16,18 @@ public class Testapp {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+//        insertsort arr = new insertsort(10);
+//        arr.insertArray(11);
+//        arr.insertArray(1);
+//        arr.insertArray(13);
+//        arr.insertArray(133);
+//        arr.insertArray(144);
+//        arr.insertArray(14);
+//        arr.insertArray(10);
+//        arr.display();
+//        arr.insert_sort();
+//        arr.display();
+        
    
         
         

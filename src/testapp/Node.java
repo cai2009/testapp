@@ -6,20 +6,16 @@
 package testapp;
 
 /**
- *链表的结点
+ *
  * @author caihe
  */
-
-public class Link{
-    public int int_data;
-//    public double double_data;
-    public Link next;
+public class Node {
+    int data;
+    Node leftchild;
+    Node rightchild;
     
-    public Link(int i){
-        int_data = i;
-//        double_data = dd;
-        next = null;
+    public void displaynode()
+    {
+        System.out.println(this.data);
     }
 }
-
-

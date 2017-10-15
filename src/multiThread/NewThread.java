@@ -33,7 +33,7 @@ public class NewThread implements Runnable{
                     System.out.println(str);
                     count++;
                     try{
-                    Thread.sleep(10);//主动释放CPU，保证aBC顺序
+                    Thread.sleep(10);       //主动释放CPU，保证aBC顺序
                     }catch(InterruptedException e){
                         e.printStackTrace();
                     }

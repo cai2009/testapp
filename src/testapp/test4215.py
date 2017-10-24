@@ -1,3 +1,9 @@
+#test4215.py
+#power on/off test
+#
+#
+#
+#
 import commands
 
 
@@ -18,26 +24,21 @@ import commands
 #      02:04.1 CardBus bridge: O2 Micro, Inc. OZ6933 Cardbus Controller (rev 01)"
 lspci = commands.getoutput("lspci | grep Eth")
 nicNumbers = lspci.count("i350")
-fileObj = open("/home/reboot.txt", 'r')
-rebootStr = fileObj.read()
+with open("/home/reboot.txt", 'r') as fileObj:
+    rebootStr = fileObj.read()
 rebootInt = int(rebootStr)
-fileObj.close()
 rebootInt = rebootInt+1
 print "reboot times: %d" % rebootInt
-fileObj1 = open("/home/reboot.txt", 'w')
-fileObj1.write(str(rebootInt))
-fileObj1.close()
-
+with open("/home/reboot.txt", 'w') as fileObj1:
+    fileObj1.write(str(rebootInt))
 if nicNumbers == 16:
-    fileRead = open("/home/count.txt", 'r')
-    countStr = fileRead.read()
-    fileRead.close()
+    with open("/home/count.txt", 'r') as  fileRead:
+        countStr = fileRead.read()
     count = int(countStr)
     count = count+1
-    fileWrite = open("/home/count.txt", 'w')
     countStr1 = str(count)
-    fileWrite.write(countStr1)
-    fileWrite.close()
+    with open("/home/count.txt", 'w') as fileWrite:
+        countStr1 = fileWrite.write(countStr1)
 else:
     with open("/home/error.txt", 'w') as fileObj2:
         fileObj2.write(lspci)

@@ -15,6 +15,7 @@ public class NewThread implements Runnable{
     Object pre;  //lock
     Object self;
     int threadId;
+    int count = 0;
     public  NewThread(String s,Object l1,Object l2){
         this.str = s;
         this.pre = l1;
@@ -23,10 +24,11 @@ public class NewThread implements Runnable{
         t = new Thread(this,str);
 //        System.out.println("Thread: "+str+"started");
         t.start();
+        
     }
     @Override
     public void run(){
-        int count = 0;
+//        int count = 0;
         while(count<10){
             synchronized(pre){
                 synchronized(self){

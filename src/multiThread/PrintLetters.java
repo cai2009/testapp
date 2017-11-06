@@ -3,6 +3,11 @@ package multiThread;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.concurrent.locks.Condition;
+/**
+ * 看到网上一道题，2个线程轮流打印1-52，A-Z
+ * 
+ * @author 'caihe'
+ */
 
 public class PrintLetters implements Runnable{
     private Lock lock1;

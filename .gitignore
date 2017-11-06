@@ -1,3 +1,7 @@
 *.class
 /.build
 *.class
+*.class
+build/classes/multiThread/NewThread.class
+build/classes/multiThread/NewThread1.class
+build/classes/multiThread/ThreadTest.class

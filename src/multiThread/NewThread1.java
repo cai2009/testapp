@@ -12,7 +12,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executor;
 
 /**
- *看到网上一道题，三个线程按顺序打印A、B、C循环10次
+ * 看到网上一道题，三个线程按顺序打印A、B、C循环10次
+ * 
  * @author 'caihe'
  */
 public class NewThread1 implements Runnable {

@@ -7,6 +7,9 @@ package multiThread;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 //import multiThread.TestABCThread.Run;
 
@@ -16,13 +19,14 @@ import java.util.concurrent.Executors;
  */
 public class ThreadTest {
 	public static void main(String[] args) {
-		ExecutorService executorService = Executors.newFixedThreadPool(3);    
-        for (int i = 0; i < 10; i++) {  
-            executorService.execute(new NewThread1("AAAAAAAAAAAAAAAA", 1));  
-            executorService.execute(new NewThread1("BBBBBBBBBBBBBBBBB", 2));  
-            executorService.execute(new NewThread1("CCCCCCCCCCCCCCcCC", 3));  
-        }  
-        executorService.shutdown(); 
+		Lock l = new ReentrantLock();
+		Condition c = l.newCondition();
+		PrintLetters t1 = new PrintLetters(l,c);
+		PrintNumbers t2 = new PrintNumbers(l,c);
+        new Thread(t2).start();
+        new Thread(t1).start();
+//		System.out.println("run");
+	 
 		
 
 	}

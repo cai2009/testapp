@@ -16,6 +16,12 @@ public class Testapp {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+    	    int[] arr = {10000,18,9,7,6,5,3,4,2,1,0,-1,1800};
+    	    QuickSort ss = new QuickSort();
+    	    ss.quickSort(arr, 0, arr.length-1);
+    	    for(int i = 0;i<arr.length;i++) {
+    	       	System.out.println(arr[i]);
+    	    }
 
    
         

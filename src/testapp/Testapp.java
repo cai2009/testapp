@@ -28,6 +28,20 @@ public class Testapp {
     	    for(int i = 0;i<arr1.length;i++) {
     	       	System.out.println(arr1[i]);
     	    }
+    	    
+    	    int[] arr2 = {10000,18,9,7,6,5,3,4,2,1,0,-1,1800};
+    	    InsertSort bb = new InsertSort();
+    	    bb.insertSort(arr2);
+    	    for(int i = 0;i<arr2.length;i++) {
+    	       	System.out.println(arr2[i]);
+    	    }
+    	    
+    	    int[] arr3 = {10000,18,9,7,6,5,3,4,2,1,0,-1,1800};
+    	    SelectSort bbb = new SelectSort();
+    	    bbb.selectSort(arr3);
+    	    for(int i = 0;i<arr3.length;i++) {
+    	       	System.out.println(arr3[i]);
+    	    }
 
    
         

@@ -20,7 +20,13 @@ public class Testapp {
     	    QuickSort ss = new QuickSort();
     	    ss.quickSort(arr, 0, arr.length-1);
     	    for(int i = 0;i<arr.length;i++) {
-    	       	System.out.println(arr[i]);
+//    	       	System.out.println(arr[i]);
+    	    }
+    	    int[] arr1 = {10000,18,9,7,6,5,3,4,2,1,0,-1,1800};
+    	    BubSort b = new BubSort();
+    	    b.bubSort(arr1);
+    	    for(int i = 0;i<arr1.length;i++) {
+    	       	System.out.println(arr1[i]);
     	    }
 
    

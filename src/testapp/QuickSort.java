@@ -15,7 +15,7 @@ public class QuickSort {
 
 	public void quickSort(int[] arr, int left, int right) {
 		if (left < right) {
-			System.out.println("quick");
+//			System.out.println("quick");
 			dealPrivot(arr, left, right);
 			privot = right - 1;
 			int i = left;
@@ -43,9 +43,7 @@ public class QuickSort {
 			quickSort(arr, left, i - 1);
 			quickSort(arr, i + 1, right);
 			
-		} else {
-			System.out.println("ssb");
-		}
+		} 
 	}
 	
 	/**

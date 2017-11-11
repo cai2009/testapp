@@ -23,14 +23,14 @@ public class Testapp {
 //    	       	System.out.println(arr[i]);
     	    }
     	    int[] arr1 = {10000,18,9,7,6,5,3,4,2,1,0,-1,1800};
-    	    BubSort b = new BubSort();
+    	    bubsort b = new bubsort();
     	    b.bubSort(arr1);
     	    for(int i = 0;i<arr1.length;i++) {
     	       	System.out.println(arr1[i]);
     	    }
     	    
     	    int[] arr2 = {10000,18,9,7,6,5,3,4,2,1,0,-1,1800};
-    	    InsertSort bb = new InsertSort();
+    	    insertsort bb = new insertsort();
     	    bb.insertSort(arr2);
     	    for(int i = 0;i<arr2.length;i++) {
     	       	System.out.println(arr2[i]);

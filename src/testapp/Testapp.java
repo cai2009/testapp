@@ -5,6 +5,8 @@
  */
 package testapp;
 
+import java.util.ArrayDeque;
+
 /**
  *
  * @author caihe
@@ -42,6 +44,16 @@ public class Testapp {
     	    for(int i = 0;i<arr3.length;i++) {
     	       	System.out.println(arr3[i]);
     	    }
+    	    
+    	    ArrayDeque li = new ArrayDeque();
+    	    li.offer(1);
+    	    li.offer(1);
+    	    li.offer(1);
+    	    li.offer(1);
+    	    li.offer(1);
+    	    li.offer(1);
+    	    li.offer(1);
+    	    System.out.println(li);
 
    
         

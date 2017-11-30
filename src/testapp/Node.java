@@ -7,6 +7,7 @@ package testapp;
 import java.lang.Math;
 import java.util.Queue;
 import java.util.ArrayDeque;
+import java.util.ArrayList;
 
 /**
  *二叉树问题合集
@@ -284,43 +285,107 @@ public class Node {
      *   同理找出Rchild的根节点——root的右孩子节点
      * 4.重复2,3步骤直至二叉树构建完成;
      */
-    public Node reConstructBinaryTree(int[] pre, int[] mid) {
+    public Node reConstructBinaryTree(int[] pre, int[] mid, int start_pre, int start_mid, int end_mid) {
     	    if (pre.length != mid.length) {
     	    	    return null;
     	    }
     	    Node root = new Node();
     	    root.data = pre[0];
     	    int i = 0;
-    	    while(mid[i] == root.data) {
+    	    while(mid[i] != root.data) {
     	    	    i++;
     	    }
-    	    int preleft = new int[i];
+    	    root.leftchild = reConstructBinaryTree(pre,mid,0,0,i-1);
+    	    root.rightchild = reConstructBinaryTree(pre,mid,0,i+1,mid.length-1);
+    	    return root;
     	    
     }
     /*
      * 插入节点
      */
-    public Node insertNode() {
-    	
+    public Node insertNode(Node root, int value) {
+    	    Node n = new Node();
+    	    n.data = value;
+    	    if (root == n) {
+    	    	    return n;
+    	    } else {
+    	    	    if (root.data < value) {
+    	    	    	    Node right = insertNode(root.rightchild, value);
+    	    	    } else {
+    	    	    	    Node left = insertNode(root.leftchild, value);
+    	    	    }
+    	    	    return root;
+    	    }
     }
+
     /*
      * 输入一个整数k和一个二叉树，打印二叉树中节点值的和等于输入整数k的所有的路径
+     * 思路： 
+     * 1.判断树是否为null、是否只有根节点 
+     * 2.用前序遍历方法，可以首先访问节点，然后将节点入队列（或栈均可），
+     * 并将数值和之前入队列的总和num相加 
+     * 3.判断当前之和否满足给定值，判断当前节点是否叶节点。
+     *  若当前值等于给定值，且当前节点是叶节点，则打印路径信息；
+     *   若当前值小于给定值，且当前节点不是叶节点，则递归调用该节点的左右子树； 
+     *   若当前值大于给定值，无需递归了（在默认节点值为正数的情况下）
      */
-    public int findTreePath() {
-    	
+    public ArrayDeque findTreePath(int k, Node n) {
+    	    ArrayDeque path = new ArrayDeque();
+    	    int current = 0;  //节点值的和
+    	    if (n == null) {
+    	    	    return path;
+    	    }
+    	    if (n.leftchild ==   null && n.rightchild == null) {
+    	    	    return path;
+    	    }
+    	    boolean isLeaf = true;
+    	    ArrayDeque  que_treenode = new ArrayDeque();
+    	    current = current+n.data;
+    	    que_treenode.offer(current);
+    	    if (current == k && isLeaf) {
+    	    	    path.offer(que_treenode);
+    	    }
+    	    findTreePath(current,n.leftchild);
+    	    findTreePath(current,n.rightchild);
+    	    path.remove(path.size()-1);
+    	    return path;
     }
     /*
      * 二叉树的搜索区间
      */
-    public int searchRange() {
-    	
+    public ArrayDeque searchRange(Node n, int k1, int k2) {
+    	    ArrayDeque list_node = new ArrayDeque();
+    	    if (n == null || n.data<k1) {
+    	    	    return list_node;
+    	    }
+    	    searchRange(n.leftchild,k1,k2);
+    	    if (n.data > k1 && n.data < k2) {
+    	        list_node.offer(n.data);
+    	    }
+    	    searchRange(n.rightchild,k1,k2);
+    	    return list_node;
     }
     /*
      * 二叉树的层次遍历
      * 类似广度优先搜索
      */
-    public int levelTravel() {
-    	
+    public void levelTravel(Node n) {
+    	    ArrayDeque q = new ArrayDeque();
+    	    Node current = null;
+    	    if (n == null) {
+    	    	    return ;
+    	    }
+    	    q.offer(n);
+    	    while (!q.isEmpty()) {
+    	    	     current = (Node) q.poll();          //此处不懂,出队会类型转换？
+    	    	     System.out.println(current.data);   
+    	         if (n.leftchild != null) {
+    	    	         q.offer(current.leftchild);
+    	         }
+    	         if (n.rightchild != null) {
+    	        	     q.offer(current.rightchild);
+    	        	 }
+    	     }
     }
     /*
      * 二叉树的2个节点的最长距离
@@ -330,13 +395,24 @@ public class Node {
      * 3.右子树种的最长距离即为二叉树的最长距离
      * 因此，递归求解即可
      */
-    public int getMaxDistance() {
-    	
+    public int getMaxDistance(Node n) {
+    	     if (n == null) {
+    	    	     return 0;
+    	     }
+    	     int left = maxDeap(n.leftchild);
+    	     int right = maxDeap(n.rightchild);
+    	     if (n.leftchild != null && n.rightchild != null) {
+    	    	     return left+right;
+    	     } else if (n.leftchild != null && n.rightchild == null) {
+    	    	     return left;
+    	     } else {
+    	    	     return right;
+    	     }
     }
     /*
      * 给出 n，问由 1...n 为节点组成的不同的二叉查找树有多少种？
      */
-    public int getKindOfTree() {
+    public int getKindOfTree(int n) {
     	
     }
     /*
@@ -348,8 +424,8 @@ public class Node {
      * 一个节点的树也是二叉查找树。
      * 
      */
-    public boolean isSearchBinaryTree() {
+    public boolean isSearchBinaryTree(Node n) {
     	
-    }
-    
+	}
+
 }

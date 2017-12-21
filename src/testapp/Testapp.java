@@ -5,7 +5,7 @@
  */
 package testapp;
 
-import java.util.ArrayDeque;
+import java.util.*;
 
 /**
  *
@@ -13,51 +13,44 @@ import java.util.ArrayDeque;
  */
 public class Testapp {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    	    int[] arr = {10000,18,9,7,6,5,3,4,2,1,0,-1,1800};
-    	    QuickSort ss = new QuickSort();
-    	    ss.quickSort(arr, 0, arr.length-1);
-    	    for(int i = 0;i<arr.length;i++) {
-//    	       	System.out.println(arr[i]);
-    	    }
-    	    int[] arr1 = {10000,18,9,7,6,5,3,4,2,1,0,-1,1800};
-    	    BubSort b = new BubSort();
-    	    b.bubSort(arr1);
-    	    for(int i = 0;i<arr1.length;i++) {
-    	       	System.out.println(arr1[i]);
-    	    }
-    	    
-    	    int[] arr2 = {10000,18,9,7,6,5,3,4,2,1,0,-1,1800};
-    	    InsertSort bb = new InsertSort();
-    	    bb.insertSort(arr2);
-    	    for(int i = 0;i<arr2.length;i++) {
-    	       	System.out.println(arr2[i]);
-    	    }
-    	    
-    	    int[] arr3 = {10000,18,9,7,6,5,3,4,2,1,0,-1,1800};
-    	    SelectSort bbb = new SelectSort();
-    	    bbb.selectSort(arr3);
-    	    for(int i = 0;i<arr3.length;i++) {
-    	       	System.out.println(arr3[i]);
-    	    }
-    	    
-    	    ArrayDeque li = new ArrayDeque();
-    	    li.offer(1);
-    	    li.offer(1);
-    	    li.offer(1);
-    	    li.offer(1);
-    	    li.offer(1);
-    	    li.offer(1);
-    	    li.offer(1);
-    	    System.out.println(li);
+	/**
+	 * @param args
+	 *            the command line arguments
+	 */
+	public static void main(String[] args) {
+		// TODO code application logic here
 
-   
+	    String[] array = new String[] { "1", "2", "3", "4" };
+	    int[] array1 = new int[] {1,2,3,4};
+	    char[] array2 = new char[] {'1', '2', '3', '4'};
+	    SumOfArray s = new SumOfArray();
+	    List ll = Arrays.asList(array);
+//		s.listAll(ll, "");
+		
+		Fibonacci fib = new Fibonacci();
+		long svv = fib.creatFib(7);
+		ArrayList uuuu = new ArrayList(20);
+//		System.out.println(svv);
+		
+		String ss = "aaaaffffffffaaaaccaf";
+		MultiCharacter test = new MultiCharacter();
+		test.getNum(ss);
+		
+		
+		
+		
+		
+		
+	}
+
+	
+    	  
+    	  
+
+    	    
+    	    
+     
         
-        
-    }
+    
     
 }

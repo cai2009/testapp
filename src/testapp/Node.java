@@ -19,6 +19,34 @@ public class Node {
 	int data;
 	Node leftchild;
 	Node rightchild;
+	
+	public Node(int d) {
+		this.data = d;
+		this.leftchild = null;
+		this.rightchild = null;
+	}
+	
+	/*
+	 * 创建树
+	 * @param l 数据源
+	 * @param i 计数器
+	 */
+	public void creatBinaryTree(Node root, int d) {
+		if (root == null) {
+			root = new Node(d);
+		} else {
+			if (root.leftchild == null) {
+				root.leftchild = new Node(d);
+			} else {
+				creatBinaryTree(root.leftchild, d);
+			}
+			if (root.rightchild == null) {
+				root.rightchild = new Node(d);
+			} else {
+				creatBinaryTree(root.rightchild, d);
+			}
+		}
+	}
 
 	/**
 	 * 求二叉树的最大深度
@@ -266,6 +294,7 @@ public class Node {
 	public int preTravel(Node n) {
 		if (n != null) {
 			int temp = n.data;
+			System.out.println(temp);
 			preTravel(n.leftchild);
 			preTravel(n.rightchild);
 			return temp;
@@ -306,38 +335,16 @@ public class Node {
 	 * 3.在先序遍历中找到最先出现Lchild中元素的那个元素，为Lchild的根节点——root的左孩子节点，
 	 * 同理找出Rchild的根节点——root的右孩子节点 4.重复2,3步骤直至二叉树构建完成;
 	 */
-	public Node reConstructBinaryTree(int[] pre, int[] mid, int start_pre, int start_mid, int end_mid) {
-		if (pre.length != mid.length) {
-			return null;
-		}
-		Node root = new Node();
-		root.data = pre[0];
-		int i = 0;
-		while (mid[i] != root.data) {
-			i++;
-		}
-		root.leftchild = reConstructBinaryTree(pre, mid, 0, 0, i - 1);
-		root.rightchild = reConstructBinaryTree(pre, mid, 0, i + 1, mid.length - 1);
-		return root;
-
+	public Node reConstructBinaryTree(int data, int[] pre, int[] mid, int start_pre, int start_mid, int end_mid) {
+		return null;
 	}
 
 	/*
 	 * 插入节点
 	 */
 	public Node insertNode(Node root, int value) {
-		Node n = new Node();
-		n.data = value;
-		if (root == n) {
-			return n;
-		} else {
-			if (root.data < value) {
-				Node right = insertNode(root.rightchild, value);
-			} else {
-				Node left = insertNode(root.leftchild, value);
-			}
+		
 			return root;
-		}
 	}
 
 	/*

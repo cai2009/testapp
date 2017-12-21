@@ -4,7 +4,7 @@ package testapp;
  * @author caihe
  *
  */
-public class InsertSort {
+public class insertsort {
 	/**
 	 * 第1轮对比，将前2个值排序
 	 * 第2轮将第三个值插入到合适的位置，前3个值排序

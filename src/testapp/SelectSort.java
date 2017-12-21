@@ -4,7 +4,7 @@ package testapp;
  * @author caihe
  *
  */
-public class SelectSort {
+public class selectsort {
 	/**
 	 * 假设最小值，最小值的下标记录
 	 * 循环对比，将最小值不断替换

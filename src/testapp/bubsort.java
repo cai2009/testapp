@@ -4,7 +4,7 @@ package testapp;
  * @author caihe
  *
  */
-public class BubSort {
+public class bubsort {
 
 	/**
 	 * 第1轮排序将最大的值排到队尾

@@ -15,37 +15,11 @@ public class Testapp {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-    	    int[] arr = {10000,18,9,7,6,5,3,4,2,1,0,-1,1800};
-    	    QuickSort ss = new QuickSort();
-    	    ss.quickSort(arr, 0, arr.length-1);
-    	    for(int i = 0;i<arr.length;i++) {
-//    	       	System.out.println(arr[i]);
-    	    }
-    	    int[] arr1 = {10000,18,9,7,6,5,3,4,2,1,0,-1,1800};
-    	    bubsort b = new bubsort();
-    	    b.bubSort(arr1);
-    	    for(int i = 0;i<arr1.length;i++) {
-    	       	System.out.println(arr1[i]);
-    	    }
-    	    
-    	    int[] arr2 = {10000,18,9,7,6,5,3,4,2,1,0,-1,1800};
-    	    insertsort bb = new insertsort();
-    	    bb.insertSort(arr2);
-    	    for(int i = 0;i<arr2.length;i++) {
-    	       	System.out.println(arr2[i]);
-    	    }
-    	    
-    	    int[] arr3 = {10000,18,9,7,6,5,3,4,2,1,0,-1,1800};
-    	    SelectSort bbb = new SelectSort();
-    	    bbb.selectSort(arr3);
-    	    for(int i = 0;i<arr3.length;i++) {
-    	       	System.out.println(arr3[i]);
-    	    }
-
-   
-        
-        
+    	String s = "asdCV中国sss";
+        SubStr ssss = new SubStr();
+        String temp = ssss.cutString(s, 2);
+        System.out.println(temp);
     }
+ 
     
 }

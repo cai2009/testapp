@@ -17,17 +17,21 @@ import java.util.concurrent.locks.ReentrantLock;
  *
  * @author caihe
  */
+class Value {
+	int i = 15;
+}
+
 public class ThreadTest {
 	public static void main(String[] args) {
-		Lock l = new ReentrantLock();
-		Condition c = l.newCondition();
-		PrintLetters t1 = new PrintLetters(l,c);
-		PrintNumbers t2 = new PrintNumbers(l,c);
-        new Thread(t2).start();
-        new Thread(t1).start();
-//		System.out.println("run");
-	 
-		
-
+		ThreadTest t = new ThreadTest();
+		t.first();
 	}
+
+	public void first() {
+		int i = 0;
+		Value v = new Value();
+		v.i = 25;
+		System.out.println(v.i);
+	}
+
 }

@@ -5,11 +5,14 @@
  */
 package testapp;
 
+import java.util.*;
+
 /**
  *
  * @author caihe
  */
 public class Testapp {
+
 
     /**
      * @param args the command line arguments
@@ -20,6 +23,5 @@ public class Testapp {
         String temp = ssss.cutString(s, 2);
         System.out.println(temp);
     }
- 
-    
+
 }

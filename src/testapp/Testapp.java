@@ -20,37 +20,23 @@ public class Testapp {
 	public static void main(String[] args) {
 		// TODO code application logic here
 
-	    String[] array = new String[] { "1", "2", "3", "4" };
-	    int[] array1 = new int[] {1,2,3,4};
-	    char[] array2 = new char[] {'1', '2', '3', '4'};
-	    SumOfArray s = new SumOfArray();
-	    List ll = Arrays.asList(array);
-//		s.listAll(ll, "");
-		
-		Fibonacci fib = new Fibonacci();
-		long svv = fib.creatFib(7);
-		ArrayList uuuu = new ArrayList(20);
-//		System.out.println(svv);
-		
-		String ss = "aaaaffffffffaaaaccaf";
-		MultiCharacter test = new MultiCharacter();
-		test.getNum(ss);
-		
-		
-		
-		
-		
-		
+		Map<String, Integer> m = new HashMap<String, Integer>();
+		String s = "RRRRRR";
+		for (int i = 0; i < s.length(); i++) {
+			char c = s.charAt(i);
+			String key = String.valueOf(c);
+			if (m.containsKey(key)) {
+				m.put(key, m.get(key) + 1);
+			} else {
+				m.put(key, 1);
+			}
+		}
+		System.out.println(m);
+		System.out.println(m.get("r"));
+
+		LeetCode leet = new LeetCode();
+		leet.differentColor(s);
+
 	}
 
-	
-    	  
-    	  
-
-    	    
-    	    
-     
-        
-    
-    
 }

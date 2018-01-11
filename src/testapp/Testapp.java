@@ -13,13 +13,8 @@ import java.util.*;
  */
 public class Testapp {
 
-	/**
-	 * @param args
-	 *            the command line arguments
-	 */
-	public static void main(String[] args) {
-		// TODO code application logic here
 
+<<<<<<< HEAD
 		Map<String, Integer> m = new HashMap<String, Integer>();
 		String s = "RRRRRR";
 		for (int i = 0; i < s.length(); i++) {
@@ -39,4 +34,16 @@ public class Testapp {
 
 	}
 
+=======
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+    	String s = "asdCV中国sss";
+        SubStr ssss = new SubStr();
+        String temp = ssss.cutString(s, 2);
+        System.out.println(temp);
+    }
+
+>>>>>>> 1bac3acbecb0a5983d14490dedab0ae5a2685a61
 }
